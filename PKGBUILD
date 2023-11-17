@@ -8,7 +8,7 @@ url="https://github.com/"
 license=('GPL')
 depends=('lolcat', 'timer-bin', 'notify-send')
 makedepends=('git')
-source=('')
+source=('work-sess-manager::git://github.com/Souptik2001/work-sess-manager.git')
 md5sums=('SKIP')
 
 pkgver() {
