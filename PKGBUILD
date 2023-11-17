@@ -8,12 +8,15 @@ url="https://github.com/"
 license=('GPL')
 depends=('lolcat' 'timer-bin')
 makedepends=('git')
-source=('work-sess-manager::git://github.com/Souptik2001/work-sess-manager.git')
+source=('work-sess-manager::git+https://github.com/Souptik2001/work-sess-manager.git')
 md5sums=('SKIP')
 
 pkgver() {
 	cd "$pkgname"
-	git describe --long --abbrev=7 | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+  ( set -o pipefail
+    git describe --long --abbrev=7 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+  )
 }
 
 package() {
