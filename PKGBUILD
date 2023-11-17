@@ -1,12 +1,12 @@
 # Maintainer: Souptik Datta <root@souptik.dev>
 pkgname='work-sess-manager'
-pkgver=1.0
+pkgver=1
 pkgrel=1
 pkgdesc="The all in one work session manager you need!"
 arch=('x86_64')
 url="https://github.com/"
 license=('GPL')
-depends=('lolcat', 'timer-bin', 'notify-send')
+depends=('lolcat' 'timer-bin')
 makedepends=('git')
 source=('work-sess-manager::git://github.com/Souptik2001/work-sess-manager.git')
 md5sums=('SKIP')
