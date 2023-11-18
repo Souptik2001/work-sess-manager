@@ -16,6 +16,9 @@ jobs:
       name: production
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Publish on AUR
         env:
           AUR_SSH_PRIVATE_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
