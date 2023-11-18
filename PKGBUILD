@@ -21,5 +21,6 @@ pkgver() {
 
 package() {
 	cd "$pkgname"
-	install -Dm755 ./sess.sh "$pkgdir/usr/bin/sess"
+	install -Dm755 ./includes/sess.sh "$pkgdir/usr/bin/sess"
+	find ./includes/sess_includes -type f -exec install -Dm 755 "{}" "/usr/bin/{}" \;
 }
