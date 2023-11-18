@@ -12,9 +12,6 @@ mkdir -p ~/.ssh && echo "StrictHostKeyChecking no" >> ~/.ssh/config
 git config --global user.email "bot@souptik.dev"
 git config --global user.name "GitHub Deploy"
 
-# Install base-devel package.
-pacman -S base-devel --noconfirm
-
 # Clone AUR Repo
 git clone --single-branch --branch $AUR_GIT_BRANCH $AUR_GIT_REPOSITORY $HOME/aur-deploy --depth 1
 cd $HOME/aur-deploy
