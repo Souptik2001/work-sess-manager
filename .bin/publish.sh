@@ -15,9 +15,6 @@ git config --global user.name "GitHub Deploy"
 # Install base-devel package.
 pacman -S base-devel --noconfirm
 
-# Build the project.
-makepkg
-
 # Clone AUR Repo
 git clone --single-branch --branch $AUR_GIT_BRANCH $AUR_GIT_REPOSITORY $HOME/aur-deploy --depth 1
 cd $HOME/aur-deploy
@@ -27,7 +24,8 @@ rm -rf PKGBUILD
 cp -r $GITHUB_WORKSPACE/PKGBUILD ./PKGBUILD
 
 # Build the source info.
-makepkg --printsrcinfo > .SRCINFO
+rm -rf .SRCINFO
+cp -r $GITHUB_WORKSPACE/.SRCINFO ./.SRCINFO
 
 # Check if we have changes
 if [[ -z $(git status -s) ]]; then
