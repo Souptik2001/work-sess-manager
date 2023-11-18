@@ -1,6 +1,6 @@
 # Maintainer: Souptik Datta <root@souptik.dev>
 pkgname='work-sess-manager'
-pkgver=1
+pkgver=r8.22b245c
 pkgrel=1
 pkgdesc="The all in one work session manager you need!"
 arch=('x86_64')
@@ -21,6 +21,6 @@ pkgver() {
 
 package() {
 	cd "$pkgname"
-	install -Dm755 ./includes/sess.sh "$pkgdir/usr/bin/sess"
-	find ./includes/sess_includes -type f -exec install -Dm 755 "{}" "/usr/bin/{}" \;
+	install -Dm755 ./sess.sh "$pkgdir/usr/bin/sess"
+	find ./sess_includes -type f -exec install -Dm 755 "{}" "$pkgdir/usr/bin/{}" \;
 }
