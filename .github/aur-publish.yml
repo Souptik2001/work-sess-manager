@@ -1,0 +1,24 @@
+name: Publish on AUR
+
+concurrency: production
+
+on:
+  release:
+    types: [ published ]
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+
+    steps:
+      - name: Publish on AUR
+        env:
+          AUR_SSH_PRIVATE_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          AUR_GIT_REPOSITORY: ${{ secrets.AUR_GIT_REPOSITORY }}
+          AUR_GIT_BRANCH: master
+        run: bash .bin/publish.sh

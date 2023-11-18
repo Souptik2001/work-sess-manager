@@ -3,7 +3,7 @@
 ![maintenance-status](https://img.shields.io/badge/maintenance-actively--developed-brightgreen.svg)
 
 Light-weight and extendable timer.
-(*for arch, for now atleast* :see_no_evil: )
+(*for arch, for now atleast* :see_no_evil:)
 
 ### Want to use?
 
