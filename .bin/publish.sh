@@ -24,16 +24,10 @@ cp -r $GITHUB_WORKSPACE/PKGBUILD ./PKGBUILD
 rm -rf .SRCINFO
 cp -r $GITHUB_WORKSPACE/.SRCINFO ./.SRCINFO
 
-# Check if we have changes
-if [[ -z $(git status -s) ]]; then
-	# No changes
-	echo "No changes to push"
-else
-	# Push changes to AUR.
-	git add .
-	git status
-	git commit -m "Deploy from GitHub $GITHUB_SHA"
-	git push origin $AUR_GIT_BRANCH
-fi
+# Push the changes!
+git add .
+git status
+git commit -m "Deploy from GitHub $GITHUB_SHA"
+git push origin $AUR_GIT_BRANCH
 
 set +x
