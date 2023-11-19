@@ -39,6 +39,14 @@ For directly contributing to this project please check [this section](#want-to-c
   - Next part is if you want to contribute to the core of this package.
   - Documentation WIP.
 
+### How its published to AUR?
+
+- This is published to AUR by a Github action, which is automatically triggered where a new release is published.
+- Before creating a new release we have to create a new commit, which updates the package meta-data:
+  - Run `makepkg`, for building the package which updates the version of the package.
+  - Run `makepkg --printsrcinfo > .SRCINFO`, which dumps the package's meta into `.SRCINFO` file.
+  - These two steps are very much required, because if there is no no change in these files then AUR will decline the push and the package will not be published.
+
 ### Drop-ins
 
 These are all the drop-ins currently available -
