@@ -1,5 +1,5 @@
 source $SCRIPT_PATH/sess_includes/sess_dropins/copy-me.sh
-source $SCRIPT_PATH/sess_includes/sess_dropins/change_dns/change-dns.sh
+source $SCRIPT_PATH/sess_includes/sess_dropins/change-dns.sh
 
 drop_ins () {
 	copy_me $1
