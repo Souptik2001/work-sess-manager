@@ -13,4 +13,5 @@ else
 	echo $val | lolcat
 	timer ${duration}m -n ${val}
 	notify-send -u critical -i face-yawn "👋" "'$duration' minutes '$val' session done."
+	[[ $(type -t drop_ins_shutdown) == function ]] && drop_ins_shutdown $1
 fi
